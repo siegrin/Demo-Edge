@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,600&display=swap');
+
+/* VARIABLES CSS */
+:root{
+     /*========== Header ==========*/
+    --header-height: 3rem;
+
+
+    /*========== Colors ==========*/
+    --body-color: #2b2b2b;
+    --color-first: #00ffd9;
+    --color-secondary: #2b2b2b;
+    --color-text: #ffffff; 
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --heading-font: 'Raleway';
+    --body-font: 'Open Sans';
+    --h1-font-size: 2rem;
+    --h3-font-size: 1rem;
+    --small-font-size: 0.8125rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 768px){
+    :root{
+        --h1-font-size: 3.5rem;
+        --h3-font-size: 1.25rem;
+        --small-font-size: 0.8125rem;
+    }
+}
+/*=============== BASE ===============*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin-top: var(--header-height);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    background-color: var(--body-color);
+    color: var(--color-text);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+h1{
+    font-size: var(--h1-font-size);
+    font-family: var(--heading-font);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+main{
+     overflow: hidden;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+    max-width: 1200px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+}
+
+.section{
+    text-align: center;
+    padding: 0;
+}
+/*=============== HEADER ===============*/
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+}
+
+nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo{
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.nav__logo:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px){
+    .nav__menu{
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        padding: 1.5rem;
+        background-color: var(--body-color);
+        z-index: var(--z-fixed);
+        transition: 0.5s;
+        border-top: 1px solid var(--color-text);
+        border-left: 1px solid var(--color-text);
+    }
+}
+
+
+.nav__item{
+    margin: 1.5rem;
+}
+
+.nav__link{
+    color: var(--color-text);
+}
+
+.nav__link:hover{
+    color: var(--color-first);
+    border-bottom: 1px solid var(--color-first);
+    transition: 0.3s;
+}
+
+.nav__toggle{
+    cursor: pointer;
+}
+
+.nav__icon{
+    font-size: 1.5rem;
+}
+
+/*Aparece menu*/
+.show{
+    right: 0;
+}
+
+/*=============== MAIN ===============*/
+.home__subtitle{
+    margin-bottom: .5rem;
+    color: var(--color-first);
+}
+
+.home__subtitle span{
+    color: var(--color-text);
+}
+.home__title{
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: var(--h3-font-size);
+}
+
+.button{
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-first);
+    color: var(--color-text);
+    border-radius: 1.5rem;
+}
+
+.button:hover{
+    box-shadow: 2px 0 24px var(--color-text);
+    transition: .5s;
+}
+
+.home__social{
+    display: flex;
+    align-items: center;
+    text-align: initial;
+}
+.home__social-title{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-left: 1px solid var(--color-first);
+    margin-right: .5rem;
+    padding: 1rem .2rem;
+    font-size: var(--small-font-size);
+}
+.home__social-link{
+    margin-right: 1rem;
+    color: var(--color-first);
+}
+
+.home__image{
+    padding: 1rem;
+}
+
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px){
+    .home__container{
+        height: 100vh;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav__list{
+        display: flex;
+    }
+
+    .nav__item{
+        margin: 1rem;
+        margin-right: 0;
+    }
+
+    .nav__toggle{
+        display: none;
+    }
+
+    .home__data{
+        padding: 0;
+        text-align: initial;
+    }
+
+    .home__social-link{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
