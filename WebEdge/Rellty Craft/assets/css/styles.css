@@ -114,7 +114,23 @@ img {
 }
 
 .section {
-    padding: 5rem 1rem;
+    padding-block: 5rem 1rem;
+}
+
+.section__title {
+    font-size: var(--big-font-size);
+    font-family: var(--second-font);
+    font-weight: initial;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section__title span {
+    display: block;
+    background: var(--third-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .main { 
@@ -253,9 +269,16 @@ img {
   color: transparent;
 }
 
-.home__img {
-    width: 270px;
+.image__data {
     justify-self: center;
+}
+.home__img {
+    width: 320px;
+}
+
+.imgaes{
+    position: absolute;
+    bottom: 10rem;
 }
 
 /*=============== BUTTON ===============*/
@@ -271,4 +294,47 @@ img {
 
 .button:hover {
   box-shadow: 0 8px 32px hsla(147, 97%, 46%, 0.4);
+}
+
+.blue {
+    background : var(--second-gradient);
+}
+
+.blue:hover {
+    box-shadow: 0 8px 32px hsla(235, 97%, 46%, 0.4);
+  }
+
+/*=============== INFO ===============*/
+.info__container {
+    row-gap: 3rem;
+}
+
+.info__data {
+    position: relative;
+    text-align: center;
+}
+
+.info__description {
+    padding-bottom: 1rem;
+}
+
+.info__server {
+    padding-bottom: 1rem;
+}
+
+.status-online {
+    color: green;
+}
+
+.status-offline {
+    color: red;
+}
+
+.info__server ul li{
+    padding-bottom: 0.5rem;
+}
+
+.info__img {
+    width: 320px;
+    justify-self: center;
 }
